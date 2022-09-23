@@ -9,13 +9,14 @@ import TarjetaPersonaje from './tarjeta-personaje.componente';
  * 
  * @returns un JSX element 
  */
-const GrillaPersonajes = () => {
+const GrillaPersonajes = ({data}) => {
 
-    return <div className="grilla-personajes">
-       <TarjetaPersonaje />
-       <TarjetaPersonaje />
-       <TarjetaPersonaje />
+    return <>
+    <div className="grilla-personajes">
+        {data?data.map((element)=><TarjetaPersonaje key={element.id} character={element}/>):""}
+    
     </div>
+    </>
 }
  
 export default GrillaPersonajes;
